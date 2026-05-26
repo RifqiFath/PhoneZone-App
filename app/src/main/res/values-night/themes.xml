@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.PhoneZone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/background_card_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="Theme.PhoneZone.Splash" parent="Theme.PhoneZone">
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
+    </style>
+
+    <style name="Theme.PhoneZone.NoActionBar" parent="Theme.PhoneZone">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="CardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/background_card_dark</item>
+    </style>
+
+    <style name="TextHeading1">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+
+    <style name="TextHeading2">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary_dark</item>
+    </style>
+
+    <style name="TextCaption">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_hint</item>
+    </style>
+</resources>

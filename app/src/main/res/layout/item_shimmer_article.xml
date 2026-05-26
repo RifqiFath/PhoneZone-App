@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="?attr/colorSurface">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Fake thumbnail -->
+        <View
+            android:id="@+id/fake_thumbnail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/colorSurface" />
+
+        <!-- Fake category -->
+        <View
+            android:id="@+id/fake_category"
+            android:layout_width="60dp"
+            android:layout_height="16dp"
+            android:layout_alignParentStart="true"
+            android:background="?attr/colorSurface"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Fake title line 1 -->
+        <View
+            android:id="@+id/fake_title1"
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:layout_below="@id/fake_category"
+            android:layout_toStartOf="@id/fake_thumbnail"
+            android:background="?attr/colorSurface"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Fake title line 2 -->
+        <View
+            android:id="@+id/fake_title2"
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:layout_below="@id/fake_title1"
+            android:layout_toStartOf="@id/fake_thumbnail"
+            android:background="?attr/colorSurface"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Fake excerpt -->
+        <View
+            android:id="@+id/fake_excerpt"
+            android:layout_width="140dp"
+            android:layout_height="12dp"
+            android:layout_below="@id/fake_title2"
+            android:background="?attr/colorSurface"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Fake date row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fake_thumbnail"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="10dp"
+                android:background="?attr/colorSurface"
+                android:layout_marginEnd="8dp" />
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="10dp"
+                android:background="?attr/colorSurface" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

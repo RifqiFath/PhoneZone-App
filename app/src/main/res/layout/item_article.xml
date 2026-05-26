@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CardView item for LinearLayoutManager article list -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="?attr/colorSurface">
+
+    <!-- Relative Layout inside card -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="12dp">
+
+        <!-- Thumbnail image (right side) -->
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="@dimen/image_list_size"
+            android:layout_height="@dimen/image_list_size"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:background="?attr/colorSurface"
+            android:layout_marginStart="12dp" />
+
+        <!-- Category badge -->
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_category_badge"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_category"
+            android:layout_toStartOf="@id/iv_thumbnail"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Excerpt -->
+        <TextView
+            android:id="@+id/tv_excerpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_toStartOf="@id/iv_thumbnail"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="?android:attr/textColorSecondary"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Author + Date row - below thumbnail -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_excerpt"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:padding="5dp"
+            android:layout_marginTop="8dp">
+
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_person"
+                app:tint="@color/text_hint" />
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_regular"
+                app:tint="?android:attr/textColorTertiary"
+                android:paddingStart="4dp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_clock"
+                app:tint="@color/text_hint" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_regular"
+                app:tint="?android:attr/textColorTertiary"
+                android:paddingStart="4dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

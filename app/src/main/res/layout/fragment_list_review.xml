@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Shimmer loading -->
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="200dp" android:background="?attr/colorSurface"
+                        android:layout_margin="4dp" />
+                    <View android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="200dp" android:background="?attr/colorSurface"
+                        android:layout_margin="4dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="200dp" android:background="?attr/colorSurface"
+                        android:layout_margin="4dp" />
+                    <View android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="200dp" android:background="?attr/colorSurface"
+                        android:layout_margin="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <!-- Grid RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:visibility="gone" />
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/layout_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="40dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📭"
+                android:textSize="56sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_articles"
+                android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Error state -->
+        <LinearLayout
+            android:id="@+id/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="40dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="😕"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/error_network"
+                android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btn_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry"
+                style="@style/PrimaryButton" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

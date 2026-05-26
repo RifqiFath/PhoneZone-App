@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <!-- Background image -->
+    <ImageView
+        android:id="@+id/iv_featured_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder_image" />
+
+    <!-- Gradient overlay for readability -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_overlay" />
+
+    <!-- Content on bottom -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Category chip -->
+        <TextView
+            android:id="@+id/tv_featured_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_category_badge_white"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_featured_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text_white"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Date -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_clock"
+                app:tint="#CCFFFFFF" />
+
+            <TextView
+                android:id="@+id/tv_featured_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#CCFFFFFF"
+                android:paddingStart="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

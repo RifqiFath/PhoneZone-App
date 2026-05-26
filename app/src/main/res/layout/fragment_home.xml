@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="48dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tv_greeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Halo! 👋"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berita Terkini"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold" />
+
+            </LinearLayout>
+
+            <!-- Featured Banner Shimmer -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_featured"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="?attr/colorSurface" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!-- Featured ViewPager2 -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_featured"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="visible" />
+
+            <!-- Latest Articles Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/latest_articles"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </LinearLayout>
+
+            <!-- Latest Articles Shimmer -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_latest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/item_shimmer_article" />
+                    <include layout="@layout/item_shimmer_article" />
+                    <include layout="@layout/item_shimmer_article" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!-- Error layout -->
+            <LinearLayout
+                android:id="@+id/layout_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="40dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="😕"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error_network"
+                    android:textSize="14sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/btn_retry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/retry"
+                    style="@style/PrimaryButton" />
+
+            </LinearLayout>
+
+            <!-- RecyclerView for latest articles -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_latest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:padding="8dp" />
+
+            <View android:layout_width="match_parent" android:layout_height="16dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

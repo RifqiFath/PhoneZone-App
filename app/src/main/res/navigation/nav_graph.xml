@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.phonezone.app.ui.home.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.phonezone.app.ui.category.CategoryFragment"
+        android:label="Kategori" />
+
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.phonezone.app.ui.bookmark.BookmarkFragment"
+        android:label="Bookmark" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.phonezone.app.ui.search.SearchFragment"
+        android:label="Cari" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.phonezone.app.ui.settings.SettingsFragment"
+        android:label="Profil" />
+
+</navigation>

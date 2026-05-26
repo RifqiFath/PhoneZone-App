@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Relative Layout wrapping everything -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top background wave/banner -->
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="?attr/colorPrimary"
+        android:layout_alignParentTop="true" />
+
+    <!-- Logo on top section -->
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="56dp"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/logopz_square"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PhoneZone"
+            android:textColor="@color/text_white"
+            android:textSize="28sp"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+
+    <!-- Login Card -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_header"
+        android:layout_marginTop="-60dp"
+        android:fillViewport="true"
+        android:paddingBottom="24dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="?attr/colorSurface">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_title"
+                android:textSize="22sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_subtitle"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Username field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="16dp"
+                app:startIconDrawable="@drawable/ic_person">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:fontFamily="@font/poppins_regular"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="8dp"
+                app:startIconDrawable="@drawable/ic_lock">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:fontFamily="@font/poppins_regular"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Show Password -->
+            <CheckBox
+                android:id="@+id/cb_show_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tampilkan Password"
+                android:textSize="13sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/btn_login"
+                style="@style/PrimaryButton"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Hint for demo -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demo: admin / 123"
+                android:textSize="12sp"
+                app:tint="?android:attr/textColorTertiary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Skip -->
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_skip"
+                android:textSize="14sp"
+                android:textColor="?attr/colorPrimary"
+                android:gravity="center"
+                android:padding="8dp"
+                android:fontFamily="@font/poppins_medium" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </ScrollView>
+</RelativeLayout>

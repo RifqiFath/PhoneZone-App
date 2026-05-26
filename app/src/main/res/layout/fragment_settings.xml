@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Profile Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/profileround"
+                app:civ_border_color="@color/text_white" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guest"
+                android:textColor="@color/text_white"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_user_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tamu"
+                android:textColor="#CCFFFFFF"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins_regular" />
+
+        </LinearLayout>
+
+        <!-- Settings Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Appearance Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TAMPILAN"
+                android:textSize="11sp"
+                app:tint="?android:attr/textColorTertiary"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="4dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Dark Mode -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_dark_mode"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_dark_mode"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switch_dark_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginStart="56dp" />
+
+                    <!-- Notifications -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_notification"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_notifications"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switch_notifications"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- App Info via TableLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INFORMASI"
+                android:textSize="11sp"
+                app:tint="?android:attr/textColorTertiary"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="4dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:layout_marginBottom="16dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1">
+
+                    <!-- Website row -->
+                    <TableRow
+                        android:id="@+id/btn_website"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:layout_margin="5dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_web"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Website"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- Contact row -->
+                    <TableRow
+                        android:id="@+id/btn_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_margin="5dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_email"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_contact"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- FAQ row -->
+                    <TableRow
+                        android:id="@+id/btn_faq"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:layout_margin="5dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_help"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FAQ"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- Privacy row -->
+                    <TableRow
+                        android:id="@+id/btn_privacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:layout_margin="5dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_lock"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kebijakan Privasi"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- About row -->
+                    <TableRow
+                        android:id="@+id/btn_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:layout_margin="5dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_info"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_about"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Share & Logout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LAINNYA"
+                android:textSize="11sp"
+                app:tint="?android:attr/textColorTertiary"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="4dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Share -->
+                    <LinearLayout
+                        android:id="@+id/btn_share"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_share"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bagikan Aplikasi"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/text_hint" />
+
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- Logout -->
+                    <LinearLayout
+                        android:id="@+id/btn_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_logout"
+                            app:tint="@color/error" />
+
+                        <TextView
+                            android:id="@+id/tv_logout_label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_logout"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/error"
+                            android:paddingStart="16dp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/error" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Version info -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PhoneZone v1.0.0\nPemrograman Berbasis Platform"
+                android:textSize="12sp"
+                app:tint="?android:attr/textColorTertiary"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

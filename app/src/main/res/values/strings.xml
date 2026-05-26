@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PhoneZone</string>
+    <string name="app_tagline">Your Tech News Hub</string>
+
+    <!-- Nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_category">Kategori</string>
+    <string name="nav_search">Cari</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_bookmark">Bookmark</string>
+
+    <!-- Login -->
+    <string name="login_title">Selamat Datang</string>
+    <string name="login_subtitle">Masuk ke PhoneZone</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Masuk</string>
+    <string name="login_skip">Lewati, lanjut tanpa login</string>
+    <string name="login_error">Username atau password salah</string>
+    <string name="login_success">Login berhasil!</string>
+
+    <!-- Home -->
+    <string name="latest_articles">Artikel Terbaru</string>
+    <string name="featured">Featured</string>
+    <string name="see_all">Lihat Semua</string>
+    <string name="no_articles">Tidak ada artikel</string>
+
+    <!-- Search -->
+    <string name="search_hint">Cari artikel...</string>
+    <string name="search_result">Hasil pencarian</string>
+    <string name="search_empty">Tidak ada hasil untuk</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_dark_mode">Mode Gelap</string>
+    <string name="settings_notifications">Notifikasi</string>
+    <string name="settings_about">Tentang Aplikasi</string>
+    <string name="settings_logout">Keluar</string>
+    <string name="settings_version">Versi</string>
+    <string name="settings_contact">Hubungi Kami</string>
+
+    <!-- Detail -->
+    <string name="read_more">Baca Selengkapnya</string>
+    <string name="share">Bagikan</string>
+    <string name="bookmark_add">Simpan</string>
+    <string name="bookmark_remove">Hapus Simpanan</string>
+    <string name="bookmark_saved">Artikel disimpan</string>
+    <string name="bookmark_removed">Artikel dihapus dari simpanan</string>
+
+    <!-- Category -->
+    <string name="category_title">Kategori</string>
+    <string name="all_category">Semua</string>
+
+    <!-- Errors -->
+    <string name="error_network">Periksa koneksi internet Anda</string>
+    <string name="error_load">Gagal memuat data</string>
+    <string name="retry">Coba Lagi</string>
+    <string name="loading">Memuat...</string>
+
+    <!-- Contact -->
+    <string name="contact_title">Hubungi Kami</string>
+    <string name="contact_email">Email</string>
+    <string name="contact_website">Website</string>
+    <string name="contact_phone">Telepon</string>
+
+    <!-- About -->
+    <string name="about_title">Tentang PhoneZone</string>
+    <string name="about_desc">PhoneZone adalah aplikasi berita dan artikel teknologi yang terhubung langsung dengan website phonezone.biz.id. Dapatkan informasi terkini seputar dunia teknologi, gadget, dan review produk.</string>
+    <string name="version_info">Versi 1.0.0</string>
+    <string name="developer">Dikembangkan untuk tugas Pemrograman Berbasis Platform</string>
+</resources>
